@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Reference jQuery -->
+    <script type="text/javascript" src="jquery-3.0.0.js"></script>
+
+    <!-- jQuery script to change the color cyclically -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var colors = ['black', 'blue', 'green'];
+            var currentColor = 0;
+
+            setInterval(function() {
+                // Set the color
+                $('#titleText').css('color', colors[currentColor]);
+
+                // Cycle to the next color
+                currentColor = (currentColor + 1) % colors.length;
+            }, 1000); // Repeat every 1 second
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Display the Hello World! text -->
+    <h2 id="titleText">Hello World!</h1>
+</body>
+
+</html>

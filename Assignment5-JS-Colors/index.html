@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Color Palette</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Choose a Color</h1>
+    <div id="palette">
+      <div
+        class="colorBox"
+        style="background-color: red"
+        onclick="changeColor('red')"
+      ></div>
+      <div
+        class="colorBox"
+        style="background-color: blue"
+        onclick="changeColor('blue')"
+      ></div>
+      <div
+        class="colorBox"
+        style="background-color: green"
+        onclick="changeColor('green')"
+      ></div>
+      <div
+        class="colorBox"
+        style="background-color: yellow"
+        onclick="changeColor('yellow')"
+      ></div>
+      <div
+        class="colorBox"
+        style="background-color: magenta"
+        onclick="changeColor('magenta')"
+      ></div>
+      <div
+        class="colorBox"
+        style="background-color: cyan"
+        onclick="changeColor('cyan')"
+      ></div>
+    </div>
+
+    <div id="output">Hello World!</div>
+
+    <div id="history" style="display: inline-block">
+      <h2>Color History</h2>
+      <ul id="historyList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sunday Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="jquery-3.0.0.js"></script>
+  </head>
+
+  <body>
+    <div id="dayMessage"></div>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var today = new Date().getDay();
+        if (today == 0) {
+          // 0 is Sunday
+          $("#dayMessage").text("It is Sunday!").css("color", "green");
+        } else {
+          $("#dayMessage").text("It is not Sunday.").css("color", "blue");
+        }
+      });
+    </script>
+  </body>
+</html>

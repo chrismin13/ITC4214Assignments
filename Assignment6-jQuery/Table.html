@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Users</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="jquery-3.0.0.js"></script>
+  </head>
+
+  <body>
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Office</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Smith</td>
+          <td>jsmith@sar.com</td>
+          <td>+30 210 1234567</td>
+          <td>PN 514</td>
+        </tr>
+        <tr>
+          <td>Maria</td>
+          <td>Carras</td>
+          <td>mcarras@jsu.edu</td>
+          <td>+30 210 7654321</td>
+          <td>PM 413</td>
+        </tr>
+        <tr>
+          <td>Helen</td>
+          <td>Antypas</td>
+          <td>hantypas@bdg.com</td>
+          <td>+30 2310 654321</td>
+          <td>PK 614</td>
+        </tr>
+        <tr>
+          <td>Afroditi</td>
+          <td>Makri</td>
+          <td>amakri@hughes.edu</td>
+          <td>+30 2310 123456</td>
+          <td>PJ 717</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <button id="nextButton">Next</button>
+    <button id="clearButton">Clear</button>
+
+    <script>
+      $(document).ready(function () {
+        let currentHighlight = -1; // -1 means no row is highlighted.
+
+        $("#nextButton").click(function () {
+          // Reset previous row color to black if any
+          if (currentHighlight >= 0) {
+            $("#userTable tbody tr").eq(currentHighlight).css("color", "black");
+          }
+
+          // Move to next row
+          currentHighlight++;
+          if (currentHighlight >= $("#userTable tbody tr").length) {
+            currentHighlight = 0; // loop back to the start
+          }
+
+          // Highlight the next row
+          $("#userTable tbody tr").eq(currentHighlight).css("color", "red");
+        });
+
+        $("#clearButton").click(function () {
+          $("#userTable tbody tr").css("color", "black");
+          currentHighlight = -1; // Reset highlight tracking
+        });
+      });
+    </script>
+  </body>
+</html>
